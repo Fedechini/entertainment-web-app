@@ -6,9 +6,10 @@ function App() {
 
   const callAPI = async () => {
     try {
-      const response = await fetch("http://localhost:9000/testAPI");
-      const data = await response.text();
+      const response = await fetch("http://127.0.0.1:9000/api/movies");
+      const data = await response.json();
       setRes(data);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -16,10 +17,9 @@ function App() {
 
   useEffect(() => {
     callAPI();
-    console.log(res);
   }, []);
 
-  return <h1>{res}</h1>;
+  return <h1>{res.data}</h1>;
 }
 
 export default App;
