@@ -8,6 +8,12 @@ router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 router.get("/logout", authController.logout);
 
-router.get("/me", userController.getUser);
+router.get("/me", authController.protect, userController.getUser);
+
+router
+  .route("/me/bookmarks")
+  .get(authController.protect, userController.getAllBookmarks)
+  .delete(authController.protect, userController.deleteBookmark)
+  .post(authController.protect, userController.addBookmark);
 
 module.exports = router;
