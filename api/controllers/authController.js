@@ -73,7 +73,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   ) {
     token = req.headers.authorization.split(" ")[1];
   } else if (req.cookies.token) {
-    token = res.cookies.token;
+    token = req.cookies.token;
   }
 
   if (!token) {
@@ -89,6 +89,5 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   req.user = user;
-  req.locals.user = user;
   next();
 });

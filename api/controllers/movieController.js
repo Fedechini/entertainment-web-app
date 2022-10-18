@@ -24,12 +24,3 @@ exports.getMovie = catchAsync(async (req, res, next) => {
     movie,
   });
 });
-
-exports.createMovie = catchAsync(async (req, res, next) => {
-  const newMovie = await Movie.create(req.body);
-
-  res.status(201).json({
-    status: "success",
-    newMovie,
-  });
-});

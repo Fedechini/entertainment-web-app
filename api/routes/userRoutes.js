@@ -11,8 +11,7 @@ router.get("/logout", authController.logout);
 router.get("/me", authController.protect, userController.getUser);
 
 router
-  .route("/me/bookmarks")
-  .get(authController.protect, userController.getAllBookmarks)
+  .route("/bookmarks/:id")
   .delete(authController.protect, userController.deleteBookmark)
   .post(authController.protect, userController.addBookmark);
 

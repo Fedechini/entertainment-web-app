@@ -47,6 +47,14 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+userSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: "bookmarks",
+  });
+
+  next();
+});
+
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next;
 
