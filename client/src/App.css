@@ -1,0 +1,50 @@
+.app__container {
+  min-height: 100vh;
+  background-color: var(--dark-blue);
+  padding: 2.5rem;
+}
+
+.navigation {
+  background-color: var(--semi-dark-blue);
+  max-width: 10rem;
+  height: 80vh;
+  border-radius: 2rem;
+  padding: 3rem 2rem;
+}
+
+.nav__logo {
+  margin-bottom: 3.5rem;
+  cursor: pointer;
+}
+
+.navigation__list {
+  display: inline-block;
+  min-height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.navigation__list-icon {
+  cursor: pointer;
+}
+
+.navigation__list-icon:hover {
+  filter: invert(47%) sepia(15%) saturate(6091%) hue-rotate(329deg)
+    brightness(93%) contrast(113%);
+}
+
+.active-icon {
+  filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(103deg)
+    brightness(106%) contrast(105%);
+}
+
+.navigation__list-user {
+  margin-top: auto;
+}
+
+.user-img {
+  height: 5rem;
+  cursor: pointer;
+}
