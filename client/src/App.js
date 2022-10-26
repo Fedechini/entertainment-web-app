@@ -25,7 +25,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />}></Route>
+      <Route path="/" element={<Home shows={shows} />}></Route>
     </Routes>
   );
 }
